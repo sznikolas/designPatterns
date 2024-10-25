@@ -17,6 +17,7 @@ public class Channel implements Subject {
     public void subscribe(Subscriber sub) {
         subs.add(sub);
         sub.setChannel(this);
+        System.out.println("Subscriber " + sub.getName() + " subscribed to channel " + this.channelName);
     }
     @Override
     public void unSubscribe(Subscriber sub) {
@@ -25,13 +26,14 @@ public class Channel implements Subject {
     @Override
     public void notifySubscribers() {
         for(Subscriber sub : subs){
-            sub.update();
+            sub.update(this);// Csatorna átadása az update metódusnak
         }
     }
 
     @Override
     public void upload(String title) {
         this.title = title;
+        System.out.println("Uploading video: " + title + " on channel " + this.channelName);
         notifySubscribers();
     }
 
