@@ -16,6 +16,7 @@ public class Channel implements Subject {
     @Override
     public void subscribe(Subscriber sub) {
         subs.add(sub);
+        sub.setChannel(this);
     }
     @Override
     public void unSubscribe(Subscriber sub) {

@@ -20,11 +20,11 @@ public class ObserverDesignPattern {
 
         channel1.unSubscribe(s1);
 
-        s1.setChannel(channel1);
-        s2.setChannel(channel1);
-        s3.setChannel(channel1);
-        s4.setChannel(channel2);
-        s5.setChannel(channel2);
+//        s1.setChannel(channel1);
+//        s2.setChannel(channel1);
+//        s3.setChannel(channel1);
+//        s4.setChannel(channel2);
+//        s5.setChannel(channel2);
 
         channel1.upload("Observer Design Pattern");
         channel2.upload("Java Programming Language");
